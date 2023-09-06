@@ -23,8 +23,9 @@ export function getDetails(req: Request, res: Response) {
       current_day: currentDayOfWeek,
       utc_time: date.toUTCString(),
       track: track || "",
-      github_file_url: "",
-      github_repo_url: "",
+      github_file_url:
+        "https://github.com/ansman58/HNGx-task-one/blob/main/controllers/getDetails.ts",
+      github_repo_url: "https://github.com/ansman58/HNGx-task-one/tree/main",
       status: 200,
     };
     return res.json({ details });
