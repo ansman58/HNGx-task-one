@@ -16,7 +16,7 @@ export function getDetails(req: Request, res: Response) {
 
   const currentDayOfWeek = daysOfWeek[date.getDay()];
 
-  const timeInUtc = getTimeInUtc()
+  const timeInUtc = getTimeInUtc();
   try {
     const track = req.query.track;
     const slack_name = req.query.slack_name;
@@ -31,7 +31,7 @@ export function getDetails(req: Request, res: Response) {
       github_repo_url: "https://github.com/ansman58/HNGx-task-one/tree/main",
       status: 200,
     };
-    return res.status(200).json({ details });
+    return res.status(200).send(details);
   } catch (error) {
     res.status(500).send("Internal Server Error");
   }
