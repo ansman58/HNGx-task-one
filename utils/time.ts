@@ -1,19 +1,10 @@
+import { DateTime } from "luxon";
+
 export function getTimeInUtc() {
-  const currentUTCTime = Date.now();
+  const currentUTCTime = DateTime.utc();
 
-  // Get the target time which is 2 seconds ahead and 2 seconds behind the current time
-  const targetTime = currentUTCTime - 2000; // 2 seconds behind
+  // Format the current UTC time as a string in the desired format
+  const formattedTime = currentUTCTime.toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
-  // Get the actual time now
-  const actualTime = Date.now();
-
-  // Check if the actual time falls within the +/-2 seconds range
-  if (actualTime >= targetTime && actualTime <= currentUTCTime) {
-    // Convert the actual time to a readable string
-    const formattedTime = new Date(actualTime).toISOString();
-
-    return formattedTime;
-  } else {
-    return "Current time is outside the +/-2 seconds range.";
-  }
+  return formattedTime;
 }
