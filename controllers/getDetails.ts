@@ -22,10 +22,10 @@ export function getDetails(req: Request, res: Response) {
     const slack_name = req.query.slack_name;
 
     const details = {
-      slack_name: slack_name,
+      slack_name: slack_name || "javanslem.dev",
       current_day: currentDayOfWeek,
       utc_time: timeInUtc,
-      track: track,
+      track: track || "backend",
       github_file_url:
         "https://github.com/ansman58/HNGx-task-one/blob/main/controllers/getDetails.ts",
       github_repo_url: "https://github.com/ansman58/HNGx-task-one/tree/main",
