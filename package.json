@@ -4,8 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "",
-    "dev": "nodemon ./server.ts"
+    "start": "node ./build/server.js",
+    "dev": "nodemon ./server.ts",
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
