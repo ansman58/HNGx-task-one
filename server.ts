@@ -10,15 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const port = process.env.PORT || 3003;
 
-app.get("/", (req, res) => {
-  res.send({
-    message: "Welcome to HNGx Task One",
-    info: "Visit /details?track={your-track}&slack_name={your-slack-name}",
-
-  })
-})
-
-app.get("/details", getDetails);
+app.get("/", getDetails);
 
 app.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);
