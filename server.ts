@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const port = process.env.PORT || 3003;
 
-app.get("/", getDetails);
+app.get("/api", getDetails);
 
 app.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);
